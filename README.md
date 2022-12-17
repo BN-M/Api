@@ -111,6 +111,40 @@ public OnPlayerDeath(playerid, killerid, reason)
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
+## Error Code(s)
+
+These codes allow reporting in case of errors
+
+ES:
+
+```CODE:
+
+1 - Discord App error (API Probablemente caída / Fuera de servicio)
+
+2 - Discord webhook inválido
+
+3 - Cliente / Servicio no encontrado (Servicio no contratado o activo)
+
+404 - Datos incorrectos (Vacíos o nulos) / Error de FS, Actualiza al último release o pide ayuda a soporte
+```
+
+EN:
+
+```
+CODE:
+
+1 - Discord App error (API System down)
+
+2 - Invalid Discord webhook
+
+3 - Client / Service not found (Service not contracted or active)
+
+404 - Incorrect data (Empty or null) / FS error, Update to the latest release or ask support for help
+```
+
+Ex:
+
+<img src="https://cdn.discordapp.com/attachments/754887805200760882/1053819574451195914/error.JPG" width=80%></img>
 
 ## Contact & More
 
@@ -122,5 +156,7 @@ public OnPlayerDeath(playerid, killerid, reason)
 <a href="https://discord.gg/yRSs48FewF" target="_blank">
   <img src="https://assets-global.website-files.com/6257adef93867e50d84d30e2/625e5fcef7ab80b8c1fe559e_Discord-Logo-Color.png" width=8%></img>
 </a>
+
+<h4>All sections of this document have been created with a template (Credits to their creators)</h4>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
