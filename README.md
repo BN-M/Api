@@ -29,7 +29,11 @@
 
 ### Before starting
 
-This service is not free today, it requires a monthly subscription to use. (More information in our discord -- https://discord.com/invite/yRSs48FewF)
+This service is not free today, it requires a monthly subscription to use. (More information in our discord / Click image)
+
+<a href="https://discord.gg/yRSs48FewF" target="_blank">
+  <img src="https://assets-global.website-files.com/6257adef93867e50d84d30e2/625e5fcef7ab80b8c1fe559e_Discord-Logo-Color.png" width=8%></img>
+</a>
 
 
 ## Example
@@ -148,14 +152,7 @@ Ex:
 
 ## Contact & More
 
-© BryanM (Bryan Miltoner)
-
-
-`Discord` -->
-
-<a href="https://discord.gg/yRSs48FewF" target="_blank">
-  <img src="https://assets-global.website-files.com/6257adef93867e50d84d30e2/625e5fcef7ab80b8c1fe559e_Discord-Logo-Color.png" width=8%></img>
-</a>
+© BryanM (Bryan Miltoner) - BryanM#0871
 
 <h4>All sections of this document have been created with a template (Credits to their creators)</h4>
 
