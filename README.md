@@ -27,9 +27,9 @@
 </div>
 
 
-### before starting
+### Before starting
 
-This service is not free today, it requires a monthly subscription to use. (More information in our discord)
+This service is not free today, it requires a monthly subscription to use. (More information in our discord -- https://discord.com/invite/yRSs48FewF)
 
 
 ## Example
