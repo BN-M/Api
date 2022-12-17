@@ -39,9 +39,16 @@ This service is not free today, it requires a monthly subscription to use. (More
   <img src="https://cdn.discordapp.com/attachments/754887805200760882/1036741507375448184/sa-mp-087.png"></img>
    
   <h2>Discord Channel</h2>
+  
+  <h3>Simple Message</h3>
   <img src="https://cdn.discordapp.com/attachments/754887805200760882/1036740893585191014/unknown.png"></img>
   
   <p>Note: <strong>the username and image (avatar) would change in a future</strong> (Custom)</p>
+  
+  <h3>Message Embed</h3>
+  <img src="https://cdn.discordapp.com/attachments/754887805200760882/1053811792410853479/image.png"></img>+
+  
+  <p>Note: <strong>the username in message embed is the same as the webhook</strong> (Image can be changed in a futures releases)</p>
 
 </div>
 
@@ -52,21 +59,21 @@ This service is not free today, it requires a monthly subscription to use. (More
 
 ## Dependencies
 
-* a_samp
+* None
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
 ## Getting Started
 
-Note: The Discord-Webhook.inc is a bonus file, It contains a function (stock) to facilitate the call of the main function (By CallRemoteFunction) it is not necessary to download it and you can create your own function following the syntax.
-
 ### Installation
 
-1. Place the `discord.amx` file in your filterscripts folder.
+1. Place the `API.amx` file in your filterscripts folder.
 2. Add on server startup in `server.cfg`
 
-2.1 ```filterscripts discord```
+2.1 ```filterscripts API```
+
+3. Pay the monthly subscription to enable the channel(s)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -75,11 +82,15 @@ Note: The Discord-Webhook.inc is a bonus file, It contains a function (stock) to
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-Syntax ES: ``NativeWebhook(menciones = 0, skin = 0, const nombre[] = Nickname (Discord), const token[] = Token del usuario (cliente), const mensaje[] = Mensaje)``
+Syntax ES: ``SendDiscordMessage(ID Del servicio, Token de usuario, playerid, Contenido del mensaje)``
 
-Syntax EN: ``NativeWebhook(everyone = 0, skin = 0, const nombre[] = Username (Discord), const token[] = Client Token, const mensaje[] = Message)``
+Syntax ES: ``SendDiscordEmbed(ID Del servicio, Token de usuario, playerid, Titulo del embed, Información (Label 1), Mensaje)``
 
-Example (Only FS - Native):
+Syntax EN: ``SendDiscordMessage(Service ID, User Token, playerid, Message content)``
+
+Syntax EN: ``SendDiscordEmbed(Service ID, User Token, playerid, Embed title, Label 1 content, Message content)``
+
+Example:
 ```c
 public OnPlayerDeath(playerid, killerid, reason)
 {
@@ -89,32 +100,13 @@ public OnPlayerDeath(playerid, killerid, reason)
     GetPlayerName(killerid, Name2, MAX_PLAYER_NAME);
 
     format(string, sizeof string, "The player %s died in hands of %s", Name, Name2);
-
-    CallRemoteFunction("NativeWebhook", "ddsss", 0, 0, "My server", "secrettoken", string);
-
-    return 1;
-}
-```
-
-Example (Using the .inc file):
-```c
-public OnPlayerDeath(playerid, killerid, reason)
-{
-    new Name[MAX_PLAYER_NAME], Name2[MAX_PLAYER_NAME], string[128];
-
-    GetPlayerName(playerid, Name, MAX_PLAYER_NAME);
-    GetPlayerName(killerid, Name2, MAX_PLAYER_NAME);
-
-    format(string, sizeof string, "The player %s died in hands of %s", Name, Name2);
-
-    MensajeWebhook("My server", "secrettoken", string, 0, 0);
+    
+    CallRemoteFunction("SendDiscordMessage", "dsds", 1, "secrettoken", playerid, string);
 
     return 1;
 }
 ```
 
-
-<h3>Both methods have the same result.</h3>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -122,7 +114,8 @@ public OnPlayerDeath(playerid, killerid, reason)
 
 ## Contact & More
 
-© BryanM (Bryan Miltoner) - parzival210 (Parzival)
+© BryanM (Bryan Miltoner)
+
 
 `Discord` -->
 
