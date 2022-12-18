@@ -74,6 +74,9 @@
 2.1 ```filterscripts API```
 
 3. Pay the monthly subscription to enable the channel(s)
+4. Enjoy (You can call the functions in your gamemode as many times as you want, wherever you want)
+
+Note: Through discord support is provided for the "installation" of our API
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
