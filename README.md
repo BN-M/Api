@@ -29,14 +29,10 @@
 
 ### Before starting
 
-This service is not free today, it requires a monthly subscription to use. (More information in our discord / Click image)
-
-<a href="https://discord.gg/yRSs48FewF" target="_blank">
-  <img src="https://assets-global.website-files.com/6257adef93867e50d84d30e2/625e5fcef7ab80b8c1fe559e_Discord-Logo-Color.png" width=8%></img>
-</a>
+<h2>This service is not free today, it requires a monthly subscription to use. (More information in our discord / https://discord.gg/yRSs48FewF)</h2>
 
 
-## Example
+### Example
 <div align="center">
   <h2>In Game</h2>
   
@@ -63,7 +59,7 @@ This service is not free today, it requires a monthly subscription to use. (More
 
 ## Dependencies
 
-* None
+* <a_samp>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -125,11 +121,11 @@ ES:
 
 1 - Discord App error (API Probablemente caída / Fuera de servicio)
 
-2 - Discord webhook inválido
+2 || 500 - Discord webhook inválido
 
 3 - Cliente / Servicio no encontrado (Servicio no contratado o activo)
 
-404 - Datos incorrectos (Vacíos o nulos) / Error de FS, Actualiza al último release o pide ayuda a soporte
+404 -  Datos incorrectos (Vacíos o nulos) / Error de FS, Actualiza al último release o pide ayuda a soporte
 ```
 
 EN:
@@ -139,7 +135,7 @@ CODE:
 
 1 - Discord App error (API System down)
 
-2 - Invalid Discord webhook
+2 || 500 - Invalid Discord webhook
 
 3 - Client / Service not found (Service not contracted or active)
 
