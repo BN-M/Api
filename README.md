@@ -1,7 +1,5 @@
 <a name="readme-top"></a>
 
-<!-- PROJECT LOGO -->
-
 <br />
 
 <div align="center">
@@ -13,145 +11,118 @@
 
   <p align="center">
     ES: 
-    Nuestra API se encarga de comunicar discord con tu servidor de manera sencilla, Nuestra meta es ofrecer un servicio facil de usar y efectivo, Por un precio justo.
+    Nuestra API se encarga de comunicar tu servidor de SA-MP con tu entorno de desarrollo.
     <br />
     <br />
     EN: 
-    Our API is in charge of communicating discord with your server in a simple way, our goal is to offer an easy to use and effective service, For a fair price.
+    Our API is in charge of communicating your SA-MP server with your development environment.
     </p>
     <br />
     <a href="https://github.com/BN-M/Discord-SAMP-API"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/BN-M/Discord-SAMP-API/releases">1st Release</a>
+    <a href="https://github.com/BN-M/Discord-SAMP-API/releases">Releases</a>
 </div>
 
-
-### Before starting
-
-<h2>This service is not free today, it requires a monthly subscription to use. (More information in our discord / https://discord.gg/yRSs48FewF)</h2>
-
-
-### Example
+### Introduction
 <div align="center">
-  <h2>In Game</h2>
-  
-  <img src="https://cdn.discordapp.com/attachments/754887805200760882/1036741507375448184/sa-mp-087.png"></img>
+  <h2>What is it about</h2>
    
-  <h2>Discord Channel</h2>
+  <p>Currently our API develops communication functions (Environment -> Server).</p>
   
-  <h3>Simple Message</h3>
-  <img src="https://cdn.discordapp.com/attachments/754887805200760882/1036740893585191014/unknown.png"></img>
+  <h3>Current Version (1.0 BETA)</h3>
   
-  <p>Note: <strong>the username and image (avatar) would change in a future</strong> (Custom)</p>
+  <h4>Available functions</h4>
   
-  <h3>Message Embed</h3>
-  <img src="https://cdn.discordapp.com/attachments/754887805200760882/1053811792410853479/image.png"></img>+
-  
-  <p>Note: <strong>the username in message embed is the same as the webhook</strong> (Image can be changed in a futures releases)</p>
+  <p>· Call of remote functions (Public's - Without parameters)</p>
+
+  <p>· Send RCON commands</p>
 
 </div>
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 
 
 ## Dependencies
 
-* <a_samp>
+* None
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
-## Getting Started
-
-### Installation
+## Installation
 
 1. Place the `API.amx` file in your filterscripts folder.
 2. Add on server startup in `server.cfg`
 
 2.1 ```filterscripts API```
 
-3. Pay the monthly subscription to enable the channel(s)
-4. Enjoy (You can call the functions in your gamemode as many times as you want, wherever you want)
-
-Note: Through discord support is provided for the "installation" of our API
+3. Done
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 
 
 <!-- USAGE EXAMPLES -->
-## Usage
+## Getting started
 
-Syntax ES: ``SendDiscordMessage(ID Del servicio, Token de usuario, playerid, Contenido del mensaje)``
+<p>Our API uses a token system to identify clients (Server side and client side), They last for 24 hours before expiring.</p>
 
-Syntax ES: ``SendDiscordEmbed(ID Del servicio, Token de usuario, playerid, Titulo del embed, Información (Label 1), Mensaje)``
+<h3>Function's</h3>
 
-Syntax EN: ``SendDiscordMessage(Service ID, User Token, playerid, Message content)``
+<p><strong>GetApiKey()</strong> - Generate a new token for use, it calls the public function -> <strong>OnApiGenerateToken(const token[])</strong> Which receives as a parameter the generated token</p>
 
-Syntax EN: ``SendDiscordEmbed(Service ID, User Token, playerid, Embed title, Label 1 content, Message content)``
+<p><strong>CheckApiRequest(const token[])</strong> - It is in charge of reviewing orders registered in the API with the token</p>
 
-Example:
+
+<h3>Example:</h3>
+
 ```c
-public OnPlayerDeath(playerid, killerid, reason)
+
+new API_KEY[17];
+
+public OnGamemodeInit()
 {
-    new Name[MAX_PLAYER_NAME], Name2[MAX_PLAYER_NAME], string[128];
-
-    GetPlayerName(playerid, Name, MAX_PLAYER_NAME);
-    GetPlayerName(killerid, Name2, MAX_PLAYER_NAME);
-
-    format(string, sizeof string, "The player %s died in hands of %s", Name, Name2);
-    
-    CallRemoteFunction("SendDiscordMessage", "dsds", 1, "secrettoken", playerid, string);
-
+    CallRemoteFunction("GetApiKey", ""); // Generate token
     return 1;
 }
-```
 
+forward OnApiGenerateToken(const token[]); // Receive token
+public OnApiGenerateToken(const token[])
+{
+	format(API_KEY, sizeof API_KEY, token);
+
+	SetTimer("ApiTimer", 5000, true); // Every 5 seconds check if there are pending orders
+
+	return 1;
+}
+
+forward ApiTimer();
+public ApiTimer()
+{
+	CallRemoteFunction("CheckApiRequest", "s", API_KEY);
+
+	return 1;
+}
+
+```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
-## Error Code(s)
+## Error Codes
 
-These codes allow reporting in case of errors
-
-ES:
-
-```CODE:
-
-1 - Discord App error (API Probablemente caída / Fuera de servicio)
-
-2 || 500 - Discord webhook inválido
-
-3 - Cliente / Servicio no encontrado (Servicio no contratado o activo)
-
-404 -  Datos incorrectos (Vacíos o nulos) / Error de FS, Actualiza al último release o pide ayuda a soporte
-```
-
-EN:
+<h3>These codes allow reporting in case of errors</h3>
 
 ```
-CODE:
+1..6 - WHILE RECEIVING PACKET / WHILE GENERATING TOKEN (API request error)
 
-1 - Discord App error (API System down)
-
-2 || 500 - Invalid Discord webhook
-
-3 - Client / Service not found (Service not contracted or active)
-
-404 - Incorrect data (Empty or null) / FS error, Update to the latest release or ask support for help
+200 - token (INVALID / EXPIRED TOKEN)
 ```
-
-Ex:
-
-<img src="https://cdn.discordapp.com/attachments/754887805200760882/1053819574451195914/error.JPG" width=80%></img>
 
 ## Contact & More
 
-© BryanM (Bryan Miltoner) - BryanM#0871
+<p>© BryanM (Bryan Miltoner) - BryanM#0871</p>
 
 <h4>All sections of this document have been created with a template (Credits to their creators)</h4>
 
