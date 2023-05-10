@@ -7,7 +7,7 @@
     <img src="https://icon-library.com/images/pawn-icon/pawn-icon-12.jpg" alt="Logo" width="80" height="80">
   </a>
 
-<h3 align="center">Discord  SAMP-API</h3>
+<h3 align="center">SAMP-API</h3>
 
   <p align="center">
     ES: 
