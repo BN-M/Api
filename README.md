@@ -29,6 +29,8 @@
   <h2>What is it about</h2>
    
   <p>Currently our API develops communication functions (Environment -> Server).</p>
+	
+  <img src="https://cdn.discordapp.com/attachments/754887805200760882/1105703663743279164/image.png"></img>
   
   <h3>Current Version (1.0 BETA)</h3>
   
