@@ -32,6 +32,55 @@
 	
   <img src="https://cdn.discordapp.com/attachments/754887805200760882/1105703663743279164/image.png"></img>
   
+  <h3>Information</h3>
+  
+  <p>ALL: Server & Client side</p>
+  
+  <table>
+  <tr>
+    <th>Path</th>
+    <th>Method</th>
+    <th>Params (*)</th>
+    <th>Supported data</th>
+    <th>Mode</th>
+  </tr>
+	
+  <tr>
+    <td>/API/Gateway/Requests/</td>
+    <td>GET</td>
+    <td>[string] => token</td>
+    <td>GET</td>
+    <td>Client Only</td>
+  </tr>
+	
+  <tr>
+    <td>/API/Gateway/Requests/</td>
+    <td>POST</td>
+    <td>[string] => token - [string] => funcname</td>
+    <td>POST - HEADERS</td>
+    <td>ALL</td>
+  </tr>
+	
+  <tr>
+    <td>/API/Gateway/Requests/</td>
+    <td>PUT</td>
+    <td>[string] => token - [int] => id - [string] => order</td>
+    <td>POST - HEADERS</td>
+    <td>ALL</td>
+  </tr>
+
+  <tr>
+    <td>/API/Gateway/Requests/</td>
+    <td>DELETE</td>
+    <td>[string] => token - [int] => id</td>
+    <td>POST - HEADERS</td>
+    <td>ALL</td>
+  </tr>
+	
+</table>
+
+<hr>
+  
   <h3>Current Version (1.0 BETA)</h3>
   
   <h4>Available functions</h4>
