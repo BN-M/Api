@@ -30,9 +30,21 @@
    
   <p>Currently our API develops communication functions (Environment -> Server).</p>
 	
-  <img src="https://cdn.discordapp.com/attachments/754887805200760882/1105703663743279164/image.png"></img>
+  <h3>Current Version (1.0 BETA)</h3>
   
-  <h3>Information</h3>
+  <h4>Available functions</h4>
+  
+  <p>· Call of remote functions (Public's - Without parameters)</p>
+
+  <p>· Send RCON commands</p>
+	
+<hr>
+	
+  <img src="https://cdn.discordapp.com/attachments/754887805200760882/1105703663743279164/image.png"></img>
+
+<hr>
+	
+  <h3>Information  (Requests)</h3>
   
   <p>ALL: Server & Client side</p>
   
@@ -78,16 +90,6 @@
   </tr>
 	
 </table>
-
-<hr>
-  
-  <h3>Current Version (1.0 BETA)</h3>
-  
-  <h4>Available functions</h4>
-  
-  <p>· Call of remote functions (Public's - Without parameters)</p>
-
-  <p>· Send RCON commands</p>
 
 </div>
 
