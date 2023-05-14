@@ -179,7 +179,7 @@ token=mytoken&funcname=myfunc
 POST /HTTP/1.1
 Host: API/EXAMPLE
 Content-Type: application/x-www-form-urlencoded
-Content-Length: 29
+Content-Length: 40
 
 token=mytoken&funcname=rcon password 123
 ```
@@ -217,7 +217,7 @@ token=mytoken&funcname=rcon password 123
 
 ## Contact & More
 
-<p>© BryanM (Bryan Miltoner) - BryanM#0871</p>
+<p>© BryanM - BryanM#0871 (Discord)</p>
 
 <h4>All sections of this document have been created with a template (Credits to their creators)</h4>
 
