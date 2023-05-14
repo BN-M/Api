@@ -128,7 +128,7 @@
 <p><strong>CheckApiRequest(const token[])</strong> - It is in charge of reviewing orders registered in the API with the token</p>
 
 
-<h3>Example:</h3>
+<h3>Server side</h3>
 
 ```c
 
@@ -160,6 +160,34 @@ public ApiTimer()
 
 ```
 
+<h3>Client side (global - functions)</h3>
+
+```
+POST /HTTP/1.1
+Host: API/EXAMPLE
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 29
+
+token=mytoken&funcname=myfunc
+```
+
+<h4>In about 5 seconds on sa-mp server, the public function (myfunc) should be called</h4>
+
+<h3>Client side (global - rcon)</h3>
+
+```
+POST /HTTP/1.1
+Host: API/EXAMPLE
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 29
+
+token=mytoken&funcname=rcon password 123
+```
+
+<h4>In about 5 seconds on sa-mp server, the password will be set to 123 via RCON command</h4>
+
+<p><strong>Note:</strong> The method doesn`t need the rcon password because is called natively from the sa-mp server (FS)</p>
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
@@ -167,10 +195,24 @@ public ApiTimer()
 
 <h3>These codes allow reporting in case of errors</h3>
 
+<p>Server side</p>
+
 ```
 1..6 - WHILE RECEIVING PACKET / WHILE GENERATING TOKEN (API request error)
 
 200 - token (INVALID / EXPIRED TOKEN)
+```
+
+<p>Client side</p>
+
+```
+200 - token (INVALID TOKEN)
+
+200 - id (REQUEST ID NOT EXITS / ALREADY SEND TO SERVER)
+
+200 - empty (REQUEST'S QUEUE IS EMPTY)
+
+400 - bad request's (API REQUEST SYNTAX ERROR)
 ```
 
 ## Contact & More
