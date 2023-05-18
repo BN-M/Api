@@ -4,24 +4,23 @@
 
 <div align="center">
   <a href="https://github.com/BN-M/Discord-SAMP-API">
-    <img src="https://icon-library.com/images/pawn-icon/pawn-icon-12.jpg" alt="Logo" width="80" height="80">
+    <img src="https://icon-library.com/images/pawn-icon/pawn-icon-12.jpg" alt="Logo" width="80" height="80"></img>
   </a>
 
-<h3 align="center">SAMP-API</h3>
+  <h2>SAMP-API</h2>
 
-  <p align="center">
-    ES: 
-    Nuestra API se encarga de comunicar tu servidor de SA-MP con tu entorno de desarrollo.
-    <br />
-    <br />
-    EN: 
-    Our API is in charge of communicating your SA-MP server with your development environment.
-    </p>
-    <br />
-    <a href="https://github.com/BN-M/Discord-SAMP-API"><strong>Explore the docs »</strong></a>
-    <br />
-    <br />
-    <a href="https://github.com/BN-M/Discord-SAMP-API/releases">Releases</a>
+  <h3>Public Beta 1st Release - (May, Friday 26 2023)</h3>
+	
+  <br />
+  
+  <p>ES: Nuestra API se encarga de comunicar tu servidor de SA-MP con tu entorno de desarrollo.</p>
+  <p>EN: Our API is in charge of communicating your SA-MP server with your development environment.</p>
+	
+  <br />
+  <a href="https://github.com/BN-M/Discord-SAMP-API"><strong>Explore the docs »</strong></a>
+  <br />
+  <br />
+  <a href="https://github.com/BN-M/Discord-SAMP-API/releases">Releases ^</a>
 </div>
 
 ### Introduction
@@ -38,11 +37,11 @@
 
   <p>· Send RCON commands</p>
 	
-<hr>
+<br />
 	
   <img src="https://cdn.discordapp.com/attachments/754887805200760882/1105703663743279164/image.png"></img>
 
-<hr>
+<br />
 	
   <h3>Information  (Requests)</h3>
   
