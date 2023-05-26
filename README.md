@@ -10,7 +10,7 @@
   <h2>SAMP-API</h2>
 
   <h3>Public Beta 1st Release - (May, Friday 26 2023)</h3>
-	
+  
   <br />
   
   <p>ES: Nuestra API se encarga de comunicar tu servidor de SA-MP con tu entorno de desarrollo.</p>
@@ -22,6 +22,17 @@
   <br />
   <a href="https://github.com/BN-M/Discord-SAMP-API/releases">Releases ^</a>
 </div>
+
+<br />
+
+  <h4>Announcements</h4>
+  
+<ul>26/05/23
+  <li>ES: Se abre al público la v1.0, Estaremos al tanto de errores o inconvenientes respecto a la API y FS recuerden que estamos en BETA.</li>
+  <li>EN: v1.0 is released, we will be aware of errors or inconveniences remember the API and FS still in BETA.</li>
+</ul>
+
+<br />
 
 ### Introduction
 <div align="center">
@@ -57,7 +68,7 @@
   </tr>
 	
   <tr>
-    <td>/API/Gateway/Requests/</td>
+    <td>neshy-rp.com/api/Gateway/Requests/</td>
     <td>GET</td>
     <td>[string] => token</td>
     <td>GET</td>
@@ -65,7 +76,7 @@
   </tr>
 	
   <tr>
-    <td>/API/Gateway/Requests/</td>
+    <td>neshy-rp.com/api/Gateway/Requests/</td>
     <td>POST</td>
     <td>[string] => token - [string] => funcname</td>
     <td>POST - HEADERS</td>
@@ -73,7 +84,7 @@
   </tr>
 	
   <tr>
-    <td>/API/Gateway/Requests/</td>
+    <td>neshy-rp.com/api/Gateway/Requests/</td>
     <td>PUT</td>
     <td>[string] => token - [int] => id - [string] => order</td>
     <td>POST - HEADERS</td>
@@ -81,7 +92,7 @@
   </tr>
 
   <tr>
-    <td>/API/Gateway/Requests/</td>
+    <td>neshy-rp.com/api/Gateway/Requests/</td>
     <td>DELETE</td>
     <td>[string] => token - [int] => id</td>
     <td>POST - HEADERS</td>
@@ -118,7 +129,7 @@
 <!-- USAGE EXAMPLES -->
 ## Getting started
 
-<p>Our API uses a token system to identify clients (Server side and client side), They last for 24 hours before expiring.</p>
+<p>Our API uses a token system to identify clients (Server side and client side), so don't share it with anyone</p>
 
 <h3>Function's</h3>
 
@@ -218,6 +229,8 @@ token=mytoken&funcname=rcon password 123
 
 <p>© BryanM - BryanM#0871 (Discord)</p>
 
-<h4>All sections of this document have been created with a template (Credits to their creators)</h4>
+<p><strong>Any review will be welcome (Respect above all), I'm also new in github so any hazing forgive me hehe.</strong> Thanks to neshy (Web-core host)</p>
+
+<p>All sections of this document have been created with a template (Credits to their creators)</p>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
