@@ -26,6 +26,11 @@
 <br />
 
   <h4>Announcements</h4>
+
+<ul>06/07/23
+  <li>ES: La primera actualización de la API se estima para la fecha 14/07/23, Añadiendo la posibilidad de llamar funciones publicas con 1 parametro.</li>
+  <li>EN: The first update of the API is estimated at 07/14/23, adding the possibility of calling public functions with 1 parameter.</li>
+</ul>
   
 <ul>26/05/23
   <li>ES: Se abre al público la v1.0, Estaremos al tanto de errores o inconvenientes respecto a la API y FS recuerden que estamos en BETA.</li>
@@ -40,7 +45,7 @@
    
   <p>Currently our API develops communication functions (Environment -> Server).</p>
 	
-  <h3>Current Version (1.0 BETA)</h3>
+  <h3>Current Version (1.1 BETA)</h3>
   
   <h4>Available functions</h4>
   
@@ -68,7 +73,7 @@
   </tr>
 	
   <tr>
-    <td>neshy-rp.com/api/Gateway/Requests/</td>
+    <td>neshy-rp.com/api/Gateway/</td>
     <td>GET</td>
     <td>[string] => token</td>
     <td>GET</td>
@@ -76,7 +81,7 @@
   </tr>
 	
   <tr>
-    <td>neshy-rp.com/api/Gateway/Requests/</td>
+    <td>neshy-rp.com/api/Gateway/</td>
     <td>POST</td>
     <td>[string] => token - [string] => funcname</td>
     <td>POST - HEADERS</td>
@@ -84,7 +89,7 @@
   </tr>
 	
   <tr>
-    <td>neshy-rp.com/api/Gateway/Requests/</td>
+    <td>neshy-rp.com/api/Gateway/</td>
     <td>PUT</td>
     <td>[string] => token - [int] => id - [string] => order</td>
     <td>POST - HEADERS</td>
@@ -92,7 +97,7 @@
   </tr>
 
   <tr>
-    <td>neshy-rp.com/api/Gateway/Requests/</td>
+    <td>neshy-rp.com/api/Gateway/</td>
     <td>DELETE</td>
     <td>[string] => token - [int] => id</td>
     <td>POST - HEADERS</td>
@@ -142,7 +147,7 @@
 
 ```c
 
-new API_KEY[17];
+new const API_KEY[20];
 
 public OnGamemodeInit()
 {
@@ -174,7 +179,7 @@ public ApiTimer()
 
 ```
 POST /HTTP/1.1
-Host: API/EXAMPLE
+Host: api/Gateway/index.php
 Content-Type: application/x-www-form-urlencoded
 Content-Length: 29
 
@@ -187,7 +192,7 @@ token=mytoken&funcname=myfunc
 
 ```
 POST /HTTP/1.1
-Host: API/EXAMPLE
+Host: api/Gateway/index.php
 Content-Type: application/x-www-form-urlencoded
 Content-Length: 40
 
@@ -229,7 +234,7 @@ token=mytoken&funcname=rcon password 123
 
 <p>© BryanM - BryanM#0871 (Discord)</p>
 
-<p><strong>Any review will be welcome (Respect above all), I'm also new in github so any hazing forgive me hehe.</strong> Thanks to neshy (Web-core host)</p>
+<p><strong>Any review will be welcome (Respect above all), I'm also new in github so any hazing forgive me hehe.</strong> Thanks to neshy (Web Host)</p>
 
 <p>All sections of this document have been created with a template (Credits to their creators)</p>
 
