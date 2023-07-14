@@ -26,6 +26,10 @@
 <br />
 
   <h4>Announcements</h4>
+<ul>14/07/23
+  <li>ES: Tras el lanzamiento de esta actualización, en la siguiente nos centraremos en el recibimiento de información directa al servidor (Sin pre-procesado predefinido) se estima su fecha para el 15/07/23 - 17/07/23.</li>
+  <li>EN: After the launch of this update, in the next one we will focus on receiving information directly to the server (No preset pre-processing) its estimated at 07/15/23 - 07/17/23.</li>
+</ul>
 
 <ul>06/07/23
   <li>ES: La primera actualización de la API se estima para la fecha 14/07/23, Añadiendo la posibilidad de llamar funciones publicas con 1 parametro.</li>
@@ -45,11 +49,11 @@
    
   <p>Currently our API develops communication functions (Environment -> Server).</p>
 	
-  <h3>Current Version (1.1 BETA)</h3>
+  <h3>Current Version (1.2 BETA)</h3>
   
   <h4>Available functions</h4>
   
-  <p>· Call of remote functions (Public's - Without parameters)</p>
+  <p>· Call of remote functions (Public's - With 1 parameter)</p>
 
   <p>· Send RCON commands</p>
 	
@@ -67,7 +71,7 @@
   <tr>
     <th>Path</th>
     <th>Method</th>
-    <th>Params (*)</th>
+    <th>Params (* -> Optional)</th>
     <th>Supported data</th>
     <th>Mode</th>
   </tr>
@@ -83,7 +87,7 @@
   <tr>
     <td>neshy-rp.com/api/Gateway/</td>
     <td>POST</td>
-    <td>[string] => token - [string] => funcname</td>
+    <td>[string] => token - [string] => funcname - [array] => params (*)</td>
     <td>POST - HEADERS</td>
     <td>ALL</td>
   </tr>
@@ -186,7 +190,19 @@ Content-Length: 29
 token=mytoken&funcname=myfunc
 ```
 
-<h4>In about 5 seconds on sa-mp server, the public function (myfunc) should be called</h4>
+<p>In about 5 seconds on sa-mp server, the public function (myfunc) should be called</p>
+
+<h4>1.2 Beta - Parameters</h4>
+
+```
+Content-Length: 41
+
+token=mytoken&funcname=myfunc&params=[20]
+```
+
+<p>In 5 seconds on sa-mp server, the public function (myfunc) should be called with the params (int:20)</p>
+
+<p><strong>Params note:</strong> The parameters needs to follow the function (myfunc in this case) order, otherwhise you can get and error or crash.</p>
 
 <h3>Client side (global - rcon)</h3>
 
@@ -199,7 +215,7 @@ Content-Length: 40
 token=mytoken&funcname=rcon password 123
 ```
 
-<h4>In about 5 seconds on sa-mp server, the password will be set to 123 via RCON command</h4>
+<p>In about 5 seconds on sa-mp server, the password will be set to 123 via RCON command</p>
 
 <p><strong>Note:</strong> The method doesn`t need the rcon password because is called natively from the sa-mp server (FS)</p>
 
@@ -227,6 +243,8 @@ token=mytoken&funcname=rcon password 123
 
 200 - empty (REQUEST'S QUEUE IS EMPTY)
 
+200 - params (API REQUEST FUNCTION PARAMETERS ERROR)
+
 400 - bad request's (API REQUEST SYNTAX ERROR)
 ```
 
@@ -234,7 +252,7 @@ token=mytoken&funcname=rcon password 123
 
 <p>© BryanM - BryanM#0871 (Discord)</p>
 
-<p><strong>Any review will be welcome (Respect above all), I'm also new in github so any hazing forgive me hehe.</strong> Thanks to neshy (Web Host)</p>
+<p><strong>Any review will be welcome (Respect above all), I'm also new in github so any hazing forgive me hehe.</strong> <br><br>Thanks to neshy (Web Host)</p>
 
 <p>All sections of this document have been created with a template (Credits to their creators)</p>
 
