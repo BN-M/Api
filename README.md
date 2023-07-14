@@ -202,7 +202,12 @@ token=mytoken&funcname=myfunc&params=[20]
 
 <p>In 5 seconds on sa-mp server, the public function (myfunc) should be called with the params (int:20)</p>
 
-<p><strong>Params note:</strong> The parameters needs to follow the function (myfunc in this case) order, otherwhise you can get and error or crash.</p>
+<p><strong>Params note(s):</strong></p>
+
+<ul>
+	<li>The parameters needs to follow the function (myfunc in this case) order, otherwhise you can get and error or crash - myfunc(int, string .....).</li>
+	<li>The parameters don`t need the format because the API (FS) automatically detect and format the function data tags (INT, STRING, FLOAT) based on parameters</li>
+</ul> 
 
 <h3>Client side (global - rcon)</h3>
 
