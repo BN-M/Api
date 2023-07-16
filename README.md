@@ -49,13 +49,15 @@
    
   <p>Currently our API develops communication functions (Environment -> Server).</p>
 	
-  <h3>Current Version (1.2 BETA)</h3>
+  <h3>Current Version (1.3 BETA)</h3>
   
   <h4>Available functions</h4>
   
+  <p>· RCON commands</p>
+
   <p>· Call of remote functions (Public's - With 1 parameter)</p>
 
-  <p>· Send RCON commands</p>
+  <p>. Receive remote data</p>
 	
 <br />
 	
@@ -87,7 +89,7 @@
   <tr>
     <td>neshy-rp.com/api/Gateway/</td>
     <td>POST</td>
-    <td>[string] => token - [string] => funcname - [array] => params (*)</td>
+    <td>[string] => token - [string | 128] => data | [string] => funcname - [array] => params (*)</td>
     <td>POST - HEADERS</td>
     <td>ALL</td>
   </tr>
@@ -176,8 +178,24 @@ public ApiTimer()
 
 	return 1;
 }
+```
+
+<hr>
+
+<h3>Client side (global - rcon)</h3>
 
 ```
+POST /HTTP/1.1
+Host: api/Gateway/index.php
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 40
+
+token=mytoken&funcname=rcon password 123
+```
+
+<p>In about 5 seconds on sa-mp server, the password will be set to 123 via RCON command</p>
+
+<p><strong>Note:</strong> The method doesn`t need the rcon password because is called natively from the sa-mp server (FS)</p>
 
 <h3>Client side (global - functions)</h3>
 
@@ -207,25 +225,33 @@ token=mytoken&funcname=myfunc&params=[20]
 <ul>
 	<li>The parameters needs to follow the function (myfunc in this case) order, otherwhise you can get and error or crash - myfunc(int, string .....).</li>
 	<li>The parameters don`t need the format because the API (FS) automatically detect and format the function data tags (INT, STRING, FLOAT) based on parameters</li>
-</ul> 
+</ul>
 
-<h3>Client side (global - rcon)</h3>
+<h4>1.3 Beta - Remote data</h4>
 
 ```
-POST /HTTP/1.1
-Host: api/Gateway/index.php
-Content-Type: application/x-www-form-urlencoded
-Content-Length: 40
+Content-Length: 92
 
-token=mytoken&funcname=rcon password 123
+token=mytoken&data=Lorem Ipsum is simply dummy text of the printing and typesetting industry
 ```
 
-<p>In about 5 seconds on sa-mp server, the password will be set to 123 via RCON command</p>
+<p>In 5 seconds on sa-mp server, the callback (OnApiReceiveRemoteData) should be called</p>
 
-<p><strong>Note:</strong> The method doesn`t need the rcon password because is called natively from the sa-mp server (FS)</p>
+<h5>(Server Side)</h5>
+
+```c
+
+forward OnApiReceiveRemoteData(const data[], data_size);
+public OnApiReceiveRemoteData(const data[], data_size)
+{
+	printf("OnApiReceiveRemoteData | %s - %d", data, data_size);
+
+	return 1;
+}
+
+```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 
 ## Error Codes
 
@@ -257,7 +283,9 @@ token=mytoken&funcname=rcon password 123
 
 <p>© BryanM - BryanM#0871 (Discord)</p>
 
-<p><strong>Any review will be welcome (Respect above all), I'm also new in github so any hazing forgive me hehe.</strong> <br><br>Thanks to neshy (Web Host)</p>
+<p><strong>Any review will be welcome (Respect above all), I'm also new in github so any hazing forgive me hehe.</strong></p>
+
+<p>Thanks to neshy (Web Host)</p>
 
 <p>All sections of this document have been created with a template (Credits to their creators)</p>
 
